@@ -4,8 +4,7 @@ import time
 import streamlit.components.v1 as components 
 
 # Sayfa ayarları (Sadece BİR KERE yazılmalı)
-st.set_page_config(page_title="UPS Delivery Panel", page_icon="📦", layout="centered")
-
+st.set_page_config(page_title="UPS Delivery Panel", page_icon="logo.png", layout="centered")
 # --- ALTAR YENİ: MOBİL UYGULAMA (PWA) DESTEĞİ ---
 # Linkleri direkt senin GitHub deponun içindeki dosyalara yönlendirdim
 st.markdown(
