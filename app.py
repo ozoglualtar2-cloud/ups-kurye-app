@@ -3,27 +3,19 @@ import requests
 import time 
 import streamlit.components.v1 as components 
 
-# Sayfa ayarları
-st.set_page_config(page_title="UPS Delivery Panel", page_icon="📦", layout="centered")
-import streamlit as st
-import requests 
-import time 
-import streamlit.components.v1 as components 
-
-# Sayfa ayarları
+# Sayfa ayarları (Sadece BİR KERE yazılmalı)
 st.set_page_config(page_title="UPS Delivery Panel", page_icon="📦", layout="centered")
 
 # --- ALTAR YENİ: MOBİL UYGULAMA (PWA) DESTEĞİ ---
-# Bu kod, telefona manifest dosyamızı ve logomuzu gösterir.
+# Linkleri direkt senin GitHub deponun içindeki dosyalara yönlendirdim
 st.markdown(
     """
-    <link rel="manifest" href="./manifest.json">
-    <link rel="apple-touch-icon" href="./logo.png">
+    <link rel="manifest" href="https://raw.githubusercontent.com/ozoglualtar2-cloud/ups-kurye-app/main/manifest.json">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/ozoglualtar2-cloud/ups-kurye-app/main/logo.png">
     """,
     unsafe_allow_html=True
 )
 # --- ALTAR YENİ BİTİŞ ---
-
 
 # --- GÜVENLİK KAPISI (LOGIN SİSTEMİ) ---
 if "logged_in" not in st.session_state:
@@ -34,21 +26,18 @@ if not st.session_state["logged_in"]:
     
     # Kullanıcıdan bilgileri alıyoruz
     kullanici_adi = st.text_input("Username")
-    sifre = st.text_input("Password", type="password") # type="password" şifreyi yıldızlı gösterir
+    sifre = st.text_input("Password", type="password") 
     
     if st.button("Login", use_container_width=True):
-        # ŞİFRELERİ BURADAN DEĞİŞTİREBİLİRSİN:
         if kullanici_adi == "driver1" and sifre == "abcd": 
             st.session_state["logged_in"] = True
-            st.rerun() # Sayfayı yenile ve içeri al
+            st.rerun() 
         else:
             st.error("Invalid Username or Password!")
             
-    # Eğer giriş yapılmadıysa, kodun aşağıya (haritalara) inmesini engeller:
     st.stop() 
 
-
-# --- ASIL UYGULAMA (GİRİŞ YAPILDIKTAN SONRA GÖRÜNEN KISIM) ---
+# --- ASIL UYGULAMA ---
 st.markdown('<h1 style="color:#5A3418;">Delivery Panel</h1>', unsafe_allow_html=True)
 st.markdown('<p style="color:#5A3418; font-size: 18px;">Today\'s assigned routes are shown below.</p>', unsafe_allow_html=True)
 
@@ -57,7 +46,7 @@ if st.button("🔄 Refresh Route", use_container_width=True):
 
 url = f"https://api.jsonbin.io/v3/b/6a00cd28adc21f119a7e6bb9/latest?_t={time.time()}"
 headers = {
-    "X-Master-Key": "$2a$10$T72jRhqyg.phWLbuSxdMVe.PQpnDi8BN6pEU/Sa7KaJvevaHK5eyO" # KENDİ ANAHTARINI YAPIŞTIRMAYI UNUTMA!
+    "X-Master-Key": "$2a$10$T72jRhqyg.phWLbuSxdMVe.PQpnDi8BN6pEU/Sa7KaJvevaHK5eyO" 
 }
 
 try:
