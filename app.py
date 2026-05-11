@@ -5,6 +5,25 @@ import streamlit.components.v1 as components
 
 # Sayfa ayarları
 st.set_page_config(page_title="UPS Delivery Panel", page_icon="📦", layout="centered")
+import streamlit as st
+import requests 
+import time 
+import streamlit.components.v1 as components 
+
+# Sayfa ayarları
+st.set_page_config(page_title="UPS Delivery Panel", page_icon="📦", layout="centered")
+
+# --- ALTAR YENİ: MOBİL UYGULAMA (PWA) DESTEĞİ ---
+# Bu kod, telefona manifest dosyamızı ve logomuzu gösterir.
+st.markdown(
+    """
+    <link rel="manifest" href="./manifest.json">
+    <link rel="apple-touch-icon" href="./logo.png">
+    """,
+    unsafe_allow_html=True
+)
+# --- ALTAR YENİ BİTİŞ ---
+
 
 # --- GÜVENLİK KAPISI (LOGIN SİSTEMİ) ---
 if "logged_in" not in st.session_state:
