@@ -10,7 +10,7 @@ st.markdown('<h1 style="color:#5A3418;">Delivery Panel</h1>', unsafe_allow_html=
 st.markdown('<p style="color:#5A3418; font-size: 18px;">Today\'s assigned routes are shown below.</p>', unsafe_allow_html=True)
 
 # Kurye için yenileme butonu
-if st.button("🔄 Rotayı Güncelle", use_container_width=True):
+if st.button("🔄 Refresh Route", use_container_width=True):
     st.rerun()
 
 # JSONBin'den veriyi çekme
@@ -27,7 +27,7 @@ try:
         courier_info = hazir_rota.get("courier", "")
         distance_info = hazir_rota.get("total_distance", "")
         
-        st.markdown(f"<p style='color:#5A3418; font-size:18px;'><b>Courier:</b> {courier_info}</p>", unsafe_allow_html=True)
+       # st.markdown(f"<p style='color:#5A3418; font-size:18px;'><b>Courier:</b> {courier_info}</p>", unsafe_allow_html=True)
         st.markdown(f"<p style='color:#5A3418; font-size:18px;'><b>Distance:</b> {distance_info}</p>", unsafe_allow_html=True)
         
         if "map_html" in hazir_rota and hazir_rota["map_html"]:
