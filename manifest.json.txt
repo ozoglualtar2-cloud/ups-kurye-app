@@ -3,12 +3,12 @@
   "name": "UPS Delivery Panel",
   "icons": [
     {
-      "src": "logo.png",
+      "src": "https://raw.githubusercontent.com/ozoglualtar2-cloud/ups-kurye-app/main/logo.png",
       "sizes": "192x192",
       "type": "image/png"
     }
   ],
-  "start_url": ".",
+  "start_url": "https://ups-kurye-app.streamlit.app/",
   "display": "standalone",
   "theme_color": "#5A3418",
   "background_color": "#5A3418"
